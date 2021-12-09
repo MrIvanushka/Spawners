@@ -5,9 +5,15 @@ using UnityEngine;
 public class SpawnSystem : MonoBehaviour
 {
     [SerializeField] private Spawner[] _spawners;
-    [SerializeField] private float _spawnDelay;
+    [SerializeField] private float _spawnDelayTime;
 
     private Coroutine _spawnCoroutine;
+    private WaitForSeconds _spawnDelay;
+
+    private void Awake()
+    {
+        _spawnDelay = new WaitForSeconds(_spawnDelayTime);
+    }
 
     private void OnEnable()
     {
@@ -23,11 +29,11 @@ public class SpawnSystem : MonoBehaviour
     {
         int currentSpawnerIndex = 0;
 
-        for (; ; )
+        while(true)
         {
             _spawners[currentSpawnerIndex].SummonEnemy();
             currentSpawnerIndex = Mathf.RoundToInt(Mathf.Repeat(currentSpawnerIndex + 1, _spawners.Length));
-            yield return new WaitForSeconds(_spawnDelay);
+            yield return _spawnDelay;
         }
     }
 
