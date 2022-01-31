@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 6057233129863220489}
-  _enemyTemplate: {fileID: 6033544486165646038, guid: 5c578ce8402c6474ca66f09bb083cc8b, type: 3}
+  _template: {fileID: 5964648141222595498, guid: 5c578ce8402c6474ca66f09bb083cc8b, type: 3}
 --- !u!1 &4715974726895597815
 GameObject:
   m_ObjectHideFlags: 0

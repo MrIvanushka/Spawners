@@ -486,7 +486,7 @@ MonoBehaviour:
   - {fileID: 850494361}
   - {fileID: 1646912112}
   - {fileID: 876184371}
-  _spawnDelay: 2
+  _spawnDelayTime: 1
 --- !u!4 &1637500665
 Transform:
   m_ObjectHideFlags: 0

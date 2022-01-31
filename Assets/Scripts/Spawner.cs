@@ -5,10 +5,10 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private Enemy _enemyTemplate;
+    [SerializeField] private Enemy _template;
 
     public void SummonEnemy()
     {
-        Instantiate(_enemyTemplate, _spawnPoint.position, Quaternion.identity);
+        Instantiate(_template, _spawnPoint.position, Quaternion.identity);
     }
 }

@@ -8,12 +8,6 @@ public class SpawnSystem : MonoBehaviour
     [SerializeField] private float _spawnDelayTime;
 
     private Coroutine _spawnCoroutine;
-    private WaitForSeconds _spawnDelay;
-
-    private void Awake()
-    {
-        _spawnDelay = new WaitForSeconds(_spawnDelayTime);
-    }
 
     private void OnEnable()
     {
@@ -28,12 +22,13 @@ public class SpawnSystem : MonoBehaviour
     private IEnumerator Spawn()
     {
         int currentSpawnerIndex = 0;
+        WaitForSeconds spawnDelay = new WaitForSeconds(_spawnDelayTime);
 
         while(true)
         {
             _spawners[currentSpawnerIndex].SummonEnemy();
             currentSpawnerIndex = Mathf.RoundToInt(Mathf.Repeat(currentSpawnerIndex + 1, _spawners.Length));
-            yield return _spawnDelay;
+            yield return spawnDelay;
         }
     }
 
